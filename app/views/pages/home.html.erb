@@ -1,0 +1,5 @@
+<% if not signed_in? then %>
+    <%= link_to 'Sign in', '/auth/google' %>
+<% else %>
+    Welcome back, <%= current_user.name %>. <small><%= link_to 'Logout', '/logout' %></small>
+<% end %>
