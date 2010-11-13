@@ -5,5 +5,8 @@ class List < ActiveRecord::Base
   accepts_nested_attributes_for :books, :reject_if => lambda { |a| a[:title].blank? }, :allow_destroy => true
 
   validates_presence_of :name
-  validates_size_of :books, :minimum => 1
+
+  validate do |list|
+    list.errors.add_to_base("A list cannot have zero books") if list.books.blank?
+  end
 end

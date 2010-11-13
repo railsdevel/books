@@ -1,14 +1,14 @@
 <% form_for list do |f| %>
 
-    <div class="error_messages">
-        <ul>
-            <% if list.errors.any? then %>
+    <% if list.errors.any? then %>
+        <div class="error_messages">
+            <ul>
                 <% list.errors.full_messages.each do |msg| %>
                     <li><%= msg %></li>
                 <% end %>
-            <% end %>
-        </ul>
-    </div>
+            </ul>
+        </div>
+    <% end %>
 
     <div class="list_name_field">
         <p>
