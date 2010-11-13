@@ -9,6 +9,12 @@ gem 'mysql2'
 
 gem 'omniauth'
 
+gem 'haml'
+
+gem "friendly_id", "~> 3.1"
+
+gem 'jquery-rails'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

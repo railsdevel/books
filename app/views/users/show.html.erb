@@ -1,0 +1,9 @@
+<h1><%= @user.name %></h1>
+<em>joined on <%= @user.created_at.strftime('%B %d, %Y') %></em>
+
+<h2>Lists</h2>
+<ul>
+    <% for list in @user.lists %>
+        <li><%= link_to list.name, list %> - <%= list.created_at.strftime('%B %d, %Y') %></li>
+    <% end %>
+</ul>

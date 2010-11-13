@@ -1,0 +1,31 @@
+<% form_for list do |f| %>
+
+    <div class="error_messages">
+        <ul>
+            <% if list.errors.any? then %>
+                <% list.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
+
+    <div class="list_name_field">
+        <p>
+            <%= f.label :name, "Name your list" %>
+            <%= f.text_field :name %>
+        </p>
+    </div>
+
+    <div id="books">
+        <% f.fields_for :books do |b| %>
+            <%= render 'book_fields', :f => b %>
+        <% end %>
+    </div>
+
+    <%= link_to "Add Book", "", :class => 'add_book' %><br/>
+
+    <%= new_book_template f, :books %>
+
+    <%= f.submit %>
+<% end %>

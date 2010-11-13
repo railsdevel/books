@@ -8,6 +8,31 @@
 </head>
 <body>
 
+<header>
+  <a id="logo" href="/">
+    Books
+  </a>
+  <nav>
+    <ul>
+      <li><%= link_to "Home", :root %></li>
+      <% if signed_in? %>
+        <li><%= link_to "Create a List", :new_list %></li>
+        <li><%= link_to "My Profile", current_user %></li>
+      <% end %>
+
+      <li><%= link_to 'Browse', '/browse' %></li>
+
+      <li>
+        <% if not signed_in? %>
+            <%= link_to 'Sign in', '/auth/google' %>
+        <% else %>
+            <%= link_to 'Sign out', '/logout' %>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</header>
+
 <%= yield %>
 
 </body>

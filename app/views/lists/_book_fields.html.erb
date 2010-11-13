@@ -1,0 +1,17 @@
+<div class="book_field">
+    <p>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </p>
+    <p>
+        <%= f.label :author %>
+        <%= f.text_field :author %>
+    </p>
+    <p>
+        <%= f.label :description %>
+        <%= f.text_area :description, :rows => 5 %>
+    </p>
+
+        <%= f.hidden_field :_destroy %>
+        <%= link_to 'remove', '', :class => 'remove_book' %>
+</div>

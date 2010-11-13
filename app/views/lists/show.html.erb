@@ -1,0 +1,12 @@
+<h2><%= @list.name %> by <small><%= link_to @list.user.name, @list.user %></small></h2>
+
+<% if @list.user == current_user %>
+    <%= link_to 'edit', edit_list_path(@list) %>
+<% end %>
+
+
+<ul>
+    <% for book in @list.books %>
+        <li><%= book.title %></li>
+    <% end %>
+</ul>

@@ -1,11 +1,13 @@
 Books::Application.routes.draw do
 
   resources :lists
+  resources :users
 
   match '/auth/:provider/callback', :to => "sessions#create"
   match '/logout', :to => "sessions#destroy"
   
-  root :to => "pages#home"
+  match '/browse' => 'pages#browse'
+  root :to => 'pages#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
