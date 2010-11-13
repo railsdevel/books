@@ -7,6 +7,6 @@
 
 <ul>
     <% for book in @list.books %>
-        <li><%= book.title %></li>
+        <li><%= book.title %> by <%= book.author %></li>
     <% end %>
 </ul>
